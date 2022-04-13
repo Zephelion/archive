@@ -1,10 +1,11 @@
 const  mongoose  = require("mongoose");
 
-const bookSchema = new mongoose.Schema({
+var bookSchema = new mongoose.Schema({
 
     title:{
         type:String,
         required:true,
+        text: true
     },
     author:{
         type:String,
@@ -33,7 +34,8 @@ const bookSchema = new mongoose.Schema({
     }
 })
 
-bookSchema.index({'$**': 'text'});
+// bookSchema.index({'$**': 'text'});
 const Book = mongoose.model('Book', bookSchema);
+// Book.createIndexes();
 
 module.exports = Book

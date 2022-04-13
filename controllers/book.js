@@ -30,20 +30,36 @@ const save = (req,res) => {
 }
 
 const search = async (req,res) => {
-    const searchString = 'Harry Potter';
+    const searchString = 'histo';
 
-	// Books.find({title: age}, function(err,doc){
-	// 	console.log(doc);
-	// });
+    // Books.find({
+    //     $or: [
+    //         {title: searchString},
+    //         {author: searchString},
+    //         {place_publication: searchString},
+    //         {language: searchString},
+    //         {subject: searchString},
+    //         // ...
+    //     ]
+    // }, (err,results) => {
+    //     console.log(results);
+    // });
 
     // const results = await Books.find({$text: { $search: searchString } });
 
     // console.log(results)
 
 
-    Books.find({$text: {$search: searchString}})
-       .limit(10)
-       .exec(function(err, docs) { console.log(docs) });
+    Books.find({$or: [{subject: {$regex: searchString, $options: 'i'}}, 
+            {author: {$regex: searchString, $options: 'i'}},
+            {place_publication: {$regex: searchString, $options: 'i'}},
+            {language: {$regex: searchString, $options: 'i'}},
+            {catalogue_number: {$regex: searchString, $options: 'i'}},
+            {title: {$regex: searchString, $options: 'i'}}]}, function(err,docs){
+        console.log(docs);
+    })
+
+ 
 }
 
 module.exports = {
