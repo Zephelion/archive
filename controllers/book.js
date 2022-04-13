@@ -29,8 +29,26 @@ const save = (req,res) => {
     res.redirect('/')
 }
 
+const search = async (req,res) => {
+    const searchString = 'Harry Potter';
+
+	// Books.find({title: age}, function(err,doc){
+	// 	console.log(doc);
+	// });
+
+    // const results = await Books.find({$text: { $search: searchString } });
+
+    // console.log(results)
+
+
+    Books.find({$text: {$search: searchString}})
+       .limit(10)
+       .exec(function(err, docs) { console.log(docs) });
+}
+
 module.exports = {
     index:index,
     store:store,
-    save:save
+    save:save,
+    search:search,
 }

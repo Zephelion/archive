@@ -33,6 +33,7 @@ const bookSchema = new mongoose.Schema({
     }
 })
 
+bookSchema.index({'$**': 'text'});
 const Book = mongoose.model('Book', bookSchema);
 
 module.exports = Book
