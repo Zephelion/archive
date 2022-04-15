@@ -5,7 +5,7 @@ const book = require('../controllers/book');
 
 router.get('/', book.index);
 router.get('/store', book.store);
-router.get('/search', book.search);
+router.post('/search', book.search);
 router.post('/store', book.save);
 
 

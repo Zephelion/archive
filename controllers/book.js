@@ -29,8 +29,8 @@ const save = (req,res) => {
     res.redirect('/')
 }
 
-const search = async (req,res) => {
-    const searchString = 'histo';
+const search = (req,res) => {
+    const searchString = req.body.value;
 
     // Books.find({
     //     $or: [
@@ -55,11 +55,13 @@ const search = async (req,res) => {
             {place_publication: {$regex: searchString, $options: 'i'}},
             {language: {$regex: searchString, $options: 'i'}},
             {catalogue_number: {$regex: searchString, $options: 'i'}},
-            {title: {$regex: searchString, $options: 'i'}}]}, function(err,docs){
-        console.log(docs);
-    })
+            {year_publication: {$regex: searchString, $options: 'i'}},
+            {title: {$regex: searchString, $options: 'i'}}]}, 
 
- 
+            function(err,docs){
+                res.send(docs);
+            })
+
 }
 
 module.exports = {

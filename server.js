@@ -12,7 +12,7 @@ connectDB();
 
 const urlEncoded = bodyParser.urlencoded({ extended: true });
 
-
+app.use(bodyParser.json());
 app.engine('hbs', engine({
     extname: "hbs",
     layoutsDir: __dirname + '/views/layouts/',
