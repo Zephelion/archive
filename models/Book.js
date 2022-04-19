@@ -13,7 +13,7 @@ var bookSchema = new mongoose.Schema({
     },
     catalogue_number:{
         type:String,
-        required:true
+        // required:true
     },
 
     year_publication:{

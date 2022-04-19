@@ -1,6 +1,6 @@
 const searchInput = document.getElementById("search");
 const bookContainer = document.getElementById("book-container");
-let bookHTML = '';
+// let bookHTML = '';
 
 searchInput.addEventListener("keyup", (e) =>{
     	
@@ -11,9 +11,11 @@ searchInput.addEventListener("keyup", (e) =>{
     .then(function (response){
         const books = response.data
         
+        bookContainer.innerHTML = '';
+
         books.forEach(book => {
-            bookHTML += `                        
-            <div class="py-8 flex flex-wrap md:flex-nowrap">
+            var bookHTML = `                        
+            <div class="transition ease-in-out delay-150 py-8 flex flex-wrap md:flex-nowrap">
                 <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
                 <span class="font-semibold title-font text-gray-700">Author</span>
                 <span class="mt-1 text-gray-500 text-sm">${book.author}</span>
@@ -30,8 +32,13 @@ searchInput.addEventListener("keyup", (e) =>{
                 </a>
                 </div>
             </div>`
+
+            console.log(book);
+            bookContainer.insertAdjacentHTML("afterbegin", bookHTML);
+            // bookContainer.insertAdjacentHTML('beforeend')
         });
-        bookContainer.innerHTML = bookHTML;
+
+        // bookContainer.innerHTML = bookHTML;
 
     }).catch(function(error){
         console.log(error);
