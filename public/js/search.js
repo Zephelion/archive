@@ -1,6 +1,5 @@
 const searchInput = document.getElementById("search");
 const bookContainer = document.getElementById("book-container");
-// let bookHTML = '';
 
 searchInput.addEventListener("keyup", (e) =>{
     	
@@ -15,7 +14,7 @@ searchInput.addEventListener("keyup", (e) =>{
 
         books.forEach(book => {
             var bookHTML = `                        
-            <div class="transition ease-in-out delay-150 py-8 flex flex-wrap md:flex-nowrap">
+            <div class="transition delay-150 duration-300 ease-in-out py-8 flex flex-wrap md:flex-nowrap">
                 <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
                 <span class="font-semibold title-font text-gray-700">Author</span>
                 <span class="mt-1 text-gray-500 text-sm">${book.author}</span>
