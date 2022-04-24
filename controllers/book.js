@@ -19,8 +19,12 @@ const save = (req,res) => {
 		catalogue_number: req.body.catalogue_number,
 		year_publication: req.body.year_publication,
 		place_publication: req.body.place_publication,
-		language: req.body.language,
-		subject: req.body.subject
+		taal: req.body.taal,
+		subject: req.body.subject,
+		exterior: req.body.exterior,
+		interior: req.body.interior,
+		fingerprint: req.body.fingerprint,
+		printer: req.body.printer,
 	};
 
     const book = new Books(form);
@@ -53,7 +57,7 @@ const search = (req,res) => {
     Books.find({$or: [{subject: {$regex: searchString, $options: 'i'}}, 
             {author: {$regex: searchString, $options: 'i'}},
             {place_publication: {$regex: searchString, $options: 'i'}},
-            {language: {$regex: searchString, $options: 'i'}},
+            {taal: {$regex: searchString, $options: 'i'}},
             {catalogue_number: {$regex: searchString, $options: 'i'}},
             {year_publication: {$regex: searchString, $options: 'i'}},
             {title: {$regex: searchString, $options: 'i'}}]}, 

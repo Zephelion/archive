@@ -26,22 +26,18 @@ var bookSchema = new mongoose.Schema({
 
     fingerprint:{
         type:String,
-        required:true,
     },
 
     printer:{
         type:String,
-        required:true,
     },
 
     exterior:{
         type:String,
-        required:true,
     },
 
     interior:{
         type:String,
-        required:true,
     },
     taal:{
         type:String,

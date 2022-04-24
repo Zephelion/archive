@@ -16,8 +16,8 @@ searchInput.addEventListener("keyup", (e) =>{
             var bookHTML = `                        
             <div class="transition delay-150 duration-300 ease-in-out py-8 flex flex-wrap md:flex-nowrap">
                 <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-                <span class="font-semibold title-font text-gray-700">Author</span>
-                <span class="mt-1 text-gray-500 text-sm">${book.author}</span>
+                <span class="font-semibold title-font text-gray-700">Year of publication</span>
+                <span class="mt-1 text-gray-500 text-sm">${book.year_publication}</span>
                 </div>
                 <div class="md:flex-grow">
                 <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">${book.title}</h2>
