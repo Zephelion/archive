@@ -13,7 +13,6 @@ var bookSchema = new mongoose.Schema({
     },
     catalogue_number:{
         type:String,
-        // required:true
     },
 
     year_publication:{
@@ -24,7 +23,27 @@ var bookSchema = new mongoose.Schema({
         type:String,
         required:true,
     },
-    language:{
+
+    fingerprint:{
+        type:String,
+        required:true,
+    },
+
+    printer:{
+        type:String,
+        required:true,
+    },
+
+    exterior:{
+        type:String,
+        required:true,
+    },
+
+    interior:{
+        type:String,
+        required:true,
+    },
+    taal:{
         type:String,
         required:true,
     },
