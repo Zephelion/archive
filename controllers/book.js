@@ -1,3 +1,4 @@
+const res = require('express/lib/response');
 const Books = require('../models/Book');
 
 const index = (req,res) => {
@@ -68,9 +69,18 @@ const search = (req,res) => {
 
 }
 
+const getUser = (req,res) =>{
+    const id = req.body.id;
+
+    Books.findOne({_id:id}).then(book =>{
+        res.send(book);
+    })
+}
+
 module.exports = {
     index:index,
     store:store,
     save:save,
     search:search,
+    get:getUser,
 }

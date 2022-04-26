@@ -6,3 +6,64 @@ div.overlay{
     opacity: 0.5;
     display: none;
 }
+
+div.modal{
+    background: #ffffff;
+    border-radius: 0.5em;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 20%);
+    left: 50%;
+    max-width: 90%;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 45em;
+    text-align: left;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transition: 0.4s;
+    z-index: -1;
+}
+
+div.modal-title{
+    color: #111827;
+    padding: 1.5em 2em;
+    pointer-events: all;
+    position: relative;
+    width: calc(100% - 4.5em);
+}
+
+div.modal-title h1{
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: normal;
+}
+
+div.modal-content{
+    border-top: 1px solid #e0e0e0;
+    padding: 2em;
+    pointer-events: all;
+    overflow: auto;
+}
+
+div.modal-close{
+    align-items: center;
+    color: #111827;
+    display: flex;
+    height: 4.5em;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 4.5em;
+}
+
+div.modal-close svg{
+    display: block;
+}
+
+div.modal.reveal{
+    opacity: 1;
+    z-index: 1;
+}
