@@ -23,7 +23,7 @@ searchInput.addEventListener("keyup", (e) =>{
                 <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">${book.title}</h2>
                 <p class="leading-relaxed">Glossier echo park pug, church-key sartorial biodiesel vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf moon party messenger bag selfies, poke vaporware kombucha lumbersexual pork belly polaroid hoodie portland craft beer.</p>
                 <p class="leading-relaxed font-bold">${book.catalogue_number}</p>
-                <a href="#" class="text-indigo-500 inline-flex items-center mt-4">Learn More
+                <a href="#" data-id="${book._id}" class="text-indigo-500 inline-flex items-center mt-4">Learn More
                     <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M5 12h14"></path>
                     <path d="M12 5l7 7-7 7"></path>
@@ -35,6 +35,12 @@ searchInput.addEventListener("keyup", (e) =>{
             console.log(book);
             bookContainer.insertAdjacentHTML("afterbegin", bookHTML);
             // bookContainer.insertAdjacentHTML('beforeend')
+
+            let currentBtn = document.querySelector("#book-container>div:first-child a");
+
+            currentBtn.addEventListener("click", userModal);
+
+            console.log(currentBtn);
         });
 
         // bookContainer.innerHTML = bookHTML;
