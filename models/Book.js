@@ -4,12 +4,12 @@ var bookSchema = new mongoose.Schema({
 
     title:{
         type:String,
-        required:true,
+        // required:true,
         text: true
     },
     author:{
         type:String,
-        required:true
+        // required:true
     },
     catalogue_number:{
         type:String,
@@ -21,7 +21,7 @@ var bookSchema = new mongoose.Schema({
 
     place_publication:{
         type:String,
-        required:true,
+        // required:true,
     },
 
     fingerprint:{
@@ -41,11 +41,11 @@ var bookSchema = new mongoose.Schema({
     },
     taal:{
         type:String,
-        required:true,
+        // required:true,
     },
     subject:{
         type:String,
-        required:true,
+        // required:true,
     }
 })
 

@@ -14,6 +14,7 @@ const store = (req,res) => {
 }
 
 const save = (req,res) => {
+
     const form = {
 		title: req.body.title,
 		author: req.body.author,
@@ -31,7 +32,9 @@ const save = (req,res) => {
     const book = new Books(form);
     book.save();
 
-    res.redirect('/')
+    res.send(book);
+    console.log("euraka! boek is succesvol opgeslagen")
+    // res.redirect('/store')
 }
 
 const search = (req,res) => {

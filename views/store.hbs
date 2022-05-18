@@ -5,7 +5,7 @@
 
     <section class=" w-full absolute top-1/2 left-1/2 mx-auto max-w-sm -translate-x-1/2 -translate-y-1/2 transform space-y-4 text-center">
 
-      <form class="w-full" action="/store" method="post">
+      <form class="w-full" id="storebook" action="/store" method="post">
 
               <!-- register content -->
       <div class="space-y-4">
@@ -17,6 +17,8 @@
             placeholder="Title"
             name="title"
             class="my-3 w-full border-none bg-transparent outline-none focus:outline-none"
+            id="title"
+            required
           />
         </div>
 
@@ -26,6 +28,8 @@
             placeholder="Author"
             name="author"
             class="my-3 w-full border-none bg-transparent outline-none focus:outline-none"
+            id="author"
+            required
           />
         </div>
 
@@ -35,6 +39,7 @@
             placeholder="Printer"
             name="printer"
             class="my-3 w-full border-none bg-transparent outline-none focus:outline-none"
+            id="printer"
           />
         </div>
 
@@ -44,6 +49,7 @@
             placeholder="Fingerprint"
             name="fingerprint"
             class="my-3 w-full border-none bg-transparent outline-none focus:outline-none"
+            id="fingerprint"
           />
         </div>
 
@@ -53,6 +59,7 @@
             placeholder="Catalogue Number"
             name="catalogue_number"
             class="my-3 w-full border-none bg-transparent outline-none focus:outline-none"
+            id="catalogue_number"
           />
         </div>
 
@@ -62,6 +69,7 @@
             placeholder="Year of publication"
             name="year_publication"
             class="my-3 w-full border-none bg-transparent outline-none focus:outline-none"
+            id="year_publication"
           />
         </div>
 
@@ -71,6 +79,7 @@
             placeholder="Place of publication"
             name="place_publication"
             class="my-3 w-full border-none bg-transparent outline-none focus:outline-none"
+            id="place_publication"
           />
         </div>
 
@@ -80,6 +89,7 @@
             placeholder="Language"
             name="taal"
             class="my-3 w-full border-none bg-transparent outline-none focus:outline-none"
+            id="taal"
           />
         </div>
 
@@ -89,6 +99,7 @@
             placeholder="Subject"
             name="subject"
             class="my-3 w-full border-none bg-transparent outline-none focus:outline-none"
+            id="subject"
           />
         </div>
 
@@ -98,6 +109,7 @@
             placeholder="Exterior"
             name="exterior"
             class="my-3 w-full border-none bg-transparent outline-none focus:outline-none"
+            id="exterior"
           />
         </div>
 
@@ -107,6 +119,7 @@
             placeholder="Interior"
             name="interior"
             class="my-3 w-full border-none bg-transparent outline-none focus:outline-none"
+            id="interior"
           />
         </div>
 
@@ -122,7 +135,12 @@
 
 
 
+    </section>
 
+    <section class="w-full" id="saved-container">
     </section>
   </div>
+
+
 </main>
+<script src="/public/js/post.js"></script>
