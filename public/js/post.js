@@ -1,16 +1,15 @@
-console.log("wagwan people");
 const form = document.getElementById("storebook");
-var title = document.getElementById("title");
-var author = document.getElementById("author");
-var printer = document.getElementById("printer");
-var fingerprint = document.getElementById("fingerprint");
-var catalogue_number = document.getElementById("catalogue_number");
-var year_publication = document.getElementById("year_publication");
-var place_publication = document.getElementById("place_publication");
-var language = document.getElementById("taal");
-var subject = document.getElementById("subject");
-var exterior = document.getElementById("exterior");
-var interior = document.getElementById("interior");
+const title = document.getElementById("title");
+const author = document.getElementById("author");
+const printer = document.getElementById("printer");
+const fingerprint = document.getElementById("fingerprint");
+const catalogue_number = document.getElementById("catalogue_number");
+const year_publication = document.getElementById("year_publication");
+const place_publication = document.getElementById("place_publication");
+const taal = document.getElementById("taal");
+const subject = document.getElementById("subject");
+const exterior = document.getElementById("exterior");
+const interior = document.getElementById("interior");
 const savedContainer = document.getElementById("saved-container");
 
 console.log(savedContainer);
@@ -20,20 +19,22 @@ console.log(savedContainer);
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    title = title.value
-    author = author.value
-    printer = printer.value
-    fingerprint = fingerprint.value
-    catalogue_number = catalogue_number.value
-    year_publication = year_publication.value
-    place_publication = place_publication.value
-    language = language.value
-    subject = subject.value
-    exterior = exterior.value
-    interior = interior.value
 
-    axios.post("/store", {title:title, author:author, printer:printer, fingerprint:fingerprint, catalogue_number:catalogue_number, year_publication:year_publication, place_publication:place_publication,
-    language:language, subject:subject, exterior:exterior, interior:interior}).then(function(response){
+
+    axios.post("/store", {
+        title:title.value, 
+        author:author.value, 
+        printer:printer.value, 
+        fingerprint:fingerprint.value, 
+        catalogue_number:catalogue_number.value, 
+        year_publication:year_publication.value, 
+        place_publication:place_publication.value,
+        taal:taal.value, 
+        subject:subject.value, 
+        exterior:exterior.value, 
+        interior:interior.value
+    })
+    .then(function(response){
 
         const savedBook = response.data;
         console.log(savedBook);

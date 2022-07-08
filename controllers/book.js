@@ -1,4 +1,3 @@
-const res = require('express/lib/response');
 const Books = require('../models/Book');
 
 const index = (req,res) => {
@@ -13,7 +12,8 @@ const store = (req,res) => {
     res.render('store');
 }
 
-const save = (req,res) => {
+const save = async (req,res) => {
+
 
     const form = {
 		title: req.body.title,
@@ -29,11 +29,15 @@ const save = (req,res) => {
 		printer: req.body.printer,
 	};
 
-    const book = new Books(form);
-    book.save();
-
-    res.send(book);
-    console.log("euraka! boek is succesvol opgeslagen")
+    const book = await new Books(form);
+    const savedBook = await book.save();
+    if(savedBook){
+        res.send(savedBook);
+        console.log("euraka! boek is succesvol opgeslagen")
+    }else{
+        res.send("error");
+        console.log("error")
+    }
     // res.redirect('/store')
 }
 
